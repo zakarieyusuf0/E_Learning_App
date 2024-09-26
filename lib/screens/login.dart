@@ -23,7 +23,7 @@ class _LogInPageState extends State<LogInPage> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushNamed(context, '/login');
           },
           icon: Icon(
             Icons.arrow_back_ios,
@@ -38,6 +38,7 @@ class _LogInPageState extends State<LogInPage> {
             children: [
               text(
                 textswidget: 'Learning App',
+                fontSized: 25,
               ),
               const SizedBox(
                 height: 40,
