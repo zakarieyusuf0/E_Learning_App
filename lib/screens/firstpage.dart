@@ -9,7 +9,7 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-   createState() => _SplashScreenState();
+  createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -25,13 +25,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kReusabaleColor,
+      backgroundColor: kScafold,
       body: Center(
         child: Text(
           'Learning App',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
+            color: kPrimary,
+            fontSize: 34,
             fontWeight: FontWeight.bold,
           ),
         ),

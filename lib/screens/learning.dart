@@ -9,7 +9,7 @@ import '../components/textcontainer.dart';
 import '../constants/constants.dart';
 
 class LearningPage extends StatefulWidget {
-  LearningPage({super.key});
+  const LearningPage({super.key});
 
   @override
   State<LearningPage> createState() => _LearningPageState();
@@ -21,39 +21,46 @@ class _LearningPageState extends State<LearningPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kScafold,
       appBar: AppBar(
+        backgroundColor: kScafold,
         leading: IconButton(
           onPressed: () {
             Navigator.pushNamed(context, '/login');
           },
           icon: Icon(
             Icons.arrow_back_ios,
+            color: kPrimary,
           ),
         ),
+        // title: Text('data'),
+        elevation: 4,
       ),
       body: ContainerCard(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            text(
-              textswidget: 'Learnin App',
+            Center(
+              child: text(
+                textswidget: 'Learnin App',
+                fontSized: 28,
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
             Image.asset(
-              'assets/Contact-Image-01.jpg',
+              'assets/Pic3.png',
             ),
             const SizedBox(
               height: 18,
             ),
             Text(
               'Select Your Course Level',
-              textAlign: TextAlign.start,
+              // textAlign: TextAlign.start,
               style: TextStyle(
                 letterSpacing: 2,
-                color: kReusabaleColor,
+                color: kPrimary,
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
               ),
@@ -67,6 +74,7 @@ class _LearningPageState extends State<LearningPage> {
                   child: Textcontainer(
                     Levels: 'Beginner',
                     Colors: Colors.deepPurple,
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   ),
                 ),
                 const SizedBox(
@@ -76,6 +84,7 @@ class _LearningPageState extends State<LearningPage> {
                   child: Textcontainer(
                     Levels: 'Middle',
                     Colors: Colors.deepPurple,
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   ),
                 ),
                 const SizedBox(
@@ -85,6 +94,7 @@ class _LearningPageState extends State<LearningPage> {
                   child: Textcontainer(
                     Levels: 'Expert',
                     Colors: Colors.deepPurple,
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   ),
                 ),
               ],
@@ -95,18 +105,21 @@ class _LearningPageState extends State<LearningPage> {
             Row(
               children: [
                 Checkbox(
+                    activeColor: kPrimary,
+                    checkColor: kButtonFbBlue,
                     value: remembers,
+                    side: BorderSide(
+                      color: kPrimary, width: 2.0, // The border width
+                    ),
                     onChanged: (value) {
-                      setState(
-                        () {
-                          remembers = value!;
-                        },
-                      );
+                      setState(() {
+                        remembers = value!;
+                      });
                     }),
                 Text(
                   'Are You sure ?',
                   style: TextStyle(
-                    color: kReusabaleColor,
+                    color: kPrimary,
                     fontWeight: FontWeight.w600,
                     fontSize: 15,
                   ),
@@ -114,7 +127,9 @@ class _LearningPageState extends State<LearningPage> {
               ],
             ),
             ButtonCard(
-              Pressed: () {},
+              Pressed: () {
+                Navigator.pushNamed(context, '/welcome');
+              },
               text: 'Continue',
             ),
           ],

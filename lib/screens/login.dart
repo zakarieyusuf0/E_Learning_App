@@ -20,15 +20,26 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kScafold,
       appBar: AppBar(
+        backgroundColor: kScafold,
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, '/home');
           },
           icon: Icon(
             Icons.arrow_back_ios,
+            color: kPrimary,
           ),
         ),
+        centerTitle: true,
+        title: Text(
+          'LOG IN',
+          style: TextStyle(
+            color: kPrimary,
+          ),
+        ),
+        elevation: 4,
       ),
       body: Center(
         child: ContainerCard(
@@ -36,6 +47,9 @@ class _LogInPageState extends State<LogInPage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 10,
+              ),
               text(
                 textswidget: 'Learning App',
                 fontSized: 25,
@@ -48,7 +62,7 @@ class _LogInPageState extends State<LogInPage> {
                 'Enter your log in details to access your account',
                 style: TextStyle(
                   // letterSpacing: 2,
-                  color: kReusabaleColor,
+                  color: kPrimary,
                   fontSize: 23,
                   fontWeight: FontWeight.w500,
                 ),
@@ -106,7 +120,15 @@ class _LogInPageState extends State<LogInPage> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Email',
-                  border: OutlineInputBorder(),
+                  hintStyle: TextStyle(
+                    color: kPrimary,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: kPrimary,
+                      width: 2.0,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -115,6 +137,9 @@ class _LogInPageState extends State<LogInPage> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Password',
+                  hintStyle: TextStyle(
+                    color: kPrimary,
+                  ),
                   border: OutlineInputBorder(),
                 ),
               ),
@@ -127,7 +152,12 @@ class _LogInPageState extends State<LogInPage> {
                   Row(
                     children: [
                       Checkbox(
+                          activeColor: kPrimary,
+                          checkColor: kButtonFbBlue,
                           value: remember,
+                          side: BorderSide(
+                            color: kPrimary, width: 2.0, // The border width
+                          ),
                           onChanged: (value) {
                             setState(() {
                               remember = value!;
@@ -136,9 +166,9 @@ class _LogInPageState extends State<LogInPage> {
                       Text(
                         'Remeber Me ?',
                         style: TextStyle(
-                          color: kReusabaleColor,
+                          color: kPrimary,
                           fontWeight: FontWeight.w600,
-                          fontSize: 15,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -148,7 +178,7 @@ class _LogInPageState extends State<LogInPage> {
                     style: TextStyle(
                       color: Colors.red,
                       fontWeight: FontWeight.w600,
-                      fontSize: 15,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -174,7 +204,7 @@ class _LogInPageState extends State<LogInPage> {
                           Text(
                             'Don\'t have an Account ?',
                             style: TextStyle(
-                              color: kReusabaleColor,
+                              color: kPrimary,
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
@@ -185,7 +215,7 @@ class _LogInPageState extends State<LogInPage> {
                           Text(
                             'Create Account',
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: kButtonFbOrange,
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
