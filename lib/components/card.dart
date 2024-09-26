@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:e_learningapp/components/text.dart';
+import 'package:e_learningapp/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class BoxCard extends StatelessWidget {
@@ -15,7 +16,7 @@ class BoxCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Color(0xFF3C4D53),
+            color: kCards,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.3),
