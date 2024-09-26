@@ -3,6 +3,7 @@
 import 'package:e_learningapp/screens/homepage.dart';
 import 'package:e_learningapp/screens/learning.dart';
 import 'package:e_learningapp/screens/login.dart';
+import 'package:e_learningapp/screens/welcomingpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class Home extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/login': (context) => LogInPage(),
         '/learning': (context) => LearningPage(),
+        '/welcome': (context) => WelcomePage(),
       },
     );
   }
